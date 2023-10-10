@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { api } from '../../core/api';
+import { useCookies } from 'react-cookie';
 import Modal from '../modal/Modal'
 import './index.css'
 
@@ -17,11 +18,11 @@ function LogIn() {
 
         //---------Clear form data ---------
 
-        
+
     };
 
     //--------------Form fucns --------------------------------
-
+    const [, setCookie] = useCookies(['sessionId', 'username']);
     const [user, setUser] = useState({
         login: "",
         password: "",
@@ -41,18 +42,20 @@ function LogIn() {
         }
     }
 
-    const sendData = async() => {
+    const sendData = async () => {
         const status = isEmpty();
         if (!status) {
             try {
                 const response = await api.post('/authorization', { login: user.login, password: user.password });
                 if (response.data.answer === 'user not found') {
                     setNotFound(true);
-                } else if(response.data.answer === 'wrong password') {
+                } else if (response.data.answer === 'wrong password') {
                     setWrongPass(true);
                 } else if (response.data.answer === 'success') {
                     closeModal();
                     console.log(`The user with id = ${response.data.key} successfuly authorizated!`);
+                    setCookie('sessionId', response.data.key, { path: '/', sameSite: 'Lax' });
+                    setCookie('username', user.login, { path: '/', sameSite: 'Lax' });
                 }
             } catch (error) {
                 console.log(error.message);
