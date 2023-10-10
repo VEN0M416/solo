@@ -1,0 +1,65 @@
+svg.userSVG {
+    position: absolute;
+    width: 30px;
+    top: 76px;
+    left: 28px;
+    color: rgb(158, 158, 158);
+}
+
+svg.pass1SVG {
+    position: absolute;
+    width: 30px;
+    top: 124px;
+    left: 28px;
+    color: rgb(158, 158, 158);
+}
+
+input{
+    padding: 10px 10px 10px 35px;
+    margin: 8px;
+    font-size:large;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    color: black;
+    width: fill;
+}
+
+input::placeholder{
+    color: rgb(158, 158, 158);
+    font-size: medium;
+}
+
+button.LogIn-Button{
+    margin: 35px 8px 4px 8px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    color: aliceblue;
+    font-size:large;
+    width: fill;
+    text-align: center;
+    background-color: rgb(245,158,11);
+    cursor: pointer;
+}
+
+button.LogIn-Button:hover{
+    background-color: rgb(255, 132, 11);
+}
+
+button.LogIn-Button:active{
+    background-color: rgb(217, 119, 6);
+}
+
+p{
+    margin: 4px 8px 8px 8px;
+    color: aliceblue;
+    text-align: center;
+}
+
+p.warning{
+    text-align: center;
+    margin: 0px 8px 0px 8px;
+    color: rgb(255, 58, 58);
+}
+
