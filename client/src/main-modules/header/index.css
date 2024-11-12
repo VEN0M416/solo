@@ -4,29 +4,54 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    background-color: rgb(38, 38, 202);
 }
 
 .Navbar{
     display: flex;
 }
 
-.NavLink{
-    margin: 5px 10px;
-    color: aliceblue;
-    text-decoration: none;
-    font-size: x-large;
-}
-
 .authorizations{
     display: flex;
 }
 
-button{
-    margin: 5px 10px;
-    color: aliceblue;
+/* .btn-head{
+    margin: 5px 5px;
+    color: #fff;
     font-size: x-large;
     border: none;
-    background: none;
+    background: none;   
     cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 7px;
+} 
+.btn-head:hover{
+    background-color: rgba(255, 255, 255, 0.103);
+} */
+.btn-head {
+    margin: 5px 5px;
+    color: #fff;
+    font-size: x-large;
+    border: none;
+    background: none;   
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-head::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.btn-head:hover::after {
+    width: 100%;
+    left: 0;
 }

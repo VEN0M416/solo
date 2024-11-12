@@ -3,11 +3,11 @@ import { api } from '../../core/api';
 import Modal from '../modal/Modal'
 import './index.css'
 
-function SignUp() {
+function SignUp({ isOpen, onClose }) {
 
     //--------------Modal fucns --------------------------------
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    /* const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -20,7 +20,7 @@ function SignUp() {
 
         setAlreadyReg(false);
     };
-
+ */
     //--------------Form fucns --------------------------------
 
     const [user, setUser] = useState({
@@ -32,8 +32,8 @@ function SignUp() {
     const [alreadyReg, setAlreadyReg] = useState(false);
     const [Empty, setEmpty] = useState(false);
 
-    const check2pass = () =>{
-        if(user.password1 === user.password2) {
+    const check2pass = () => {
+        if (user.password1 === user.password2) {
             setCorrect2Pass(true);
             return true;
         } else {
@@ -53,7 +53,7 @@ function SignUp() {
         }
     }
 
-    const sendData = async() => {
+    const sendData = async () => {
         const status1 = isEmpty();
         const status2 = check2pass();
         if (!status1 && status2) {
@@ -62,7 +62,7 @@ function SignUp() {
                 if (response.data.answer === 'user already exists') {
                     setAlreadyReg(true);
                 } else if (response.data.answer === 'success') {
-                    closeModal();
+                    onClose();
                     console.log('The user successfuly registrated!')
                 }
             } catch (error) {
@@ -73,8 +73,8 @@ function SignUp() {
 
     return (
         <div>
-            <button onClick={openModal}>Sign Up</button>
-            <Modal isOpen={isModalOpen} onClose={closeModal} head={'SIGN UP'}>
+            {/* <button onClick={openModal} className="btn-head">Зарегистрироваться</button> */}
+            <Modal isOpen={isOpen} onClose={onClose} head={'Регистрация'}>
                 <div className='child'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -142,9 +142,9 @@ function SignUp() {
                             sendData();
                         }}
                     >
-                        Sign Up
+                        Хорошо
                     </button>
-                    <p>Are you already registered?<br /> Go to log in</p>
+                    <p>Вы уже зарегистрированы?<br /> Перейдите на окно входа</p>
                 </div>
             </Modal>
         </div>

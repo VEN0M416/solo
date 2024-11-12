@@ -1,0 +1,104 @@
+/* Стили для страницы AboutUs */
+.AboutUs{
+    background: linear-gradient(135deg, #FF7E5F, #FEB47B);
+}
+.Body-AboutUs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.about-section {
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    animation: fadeIn 1.5s ease-in-out 1s;
+}
+
+.info-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #FFEBCD;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #fdfdfd;
+    font-weight: 500; /* Добавляем жирность */
+    line-height: 1.4;
+}
+
+/* Анимация для заголовков */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Базовые стили для кнопки */
+/* .But {
+    position: relative;
+    padding: 10px 20px;
+    background: none;
+    color: #FF7E5F;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+} */
+
+/* Стили для анимационного подчеркивания */
+/* .But::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #FF7E5F;
+    transition: width 0.4s ease, left 0.4s ease; 
+} */
+
+/* Подчеркивание на :hover с анимацией из центра */
+/* .But:hover::after {
+    width: 100%;
+    left: 0;
+} */

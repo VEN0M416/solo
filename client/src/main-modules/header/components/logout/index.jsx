@@ -18,9 +18,10 @@ export default function LogOut() {
 
     return (<>
         <button
+            className="btn-head"
             onClick={() => {
                 logout();
             }}
-        >Log Out</button>
+        >Выйти</button>
     </>)
 }

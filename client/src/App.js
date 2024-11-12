@@ -3,6 +3,7 @@ import { Main } from "./pages/main-hello";
 import { Profile } from "./pages/profile";
 import { AboutUs } from "./pages/about-us";
 import { Admin } from "./pages/admin";
+import ProtectedRoute from "./main-modules/ProtectedRoute";
 import './App.css';
 
 function App() {
@@ -11,7 +12,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />} />
-          <Route path='/profile' element={<Profile />} />
+          <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/admin' element={<Admin />} />
         </Routes>

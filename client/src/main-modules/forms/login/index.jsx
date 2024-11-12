@@ -4,10 +4,10 @@ import { useCookies } from 'react-cookie';
 import Modal from '../modal/Modal'
 import './index.css'
 
-function LogIn() {
+function LogIn({ isOpen, onClose }) {
     //--------------Modal fucns --------------------------------
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    /* const [isModalOpen, setIsModalOpen] = useState(false);
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -19,7 +19,7 @@ function LogIn() {
         //---------Clear form data ---------
 
 
-    };
+    }; */
 
     //--------------Form fucns --------------------------------
     const [, setCookie] = useCookies(['sessionId', 'username']);
@@ -52,7 +52,7 @@ function LogIn() {
                 } else if (response.data.answer === 'wrong password') {
                     setWrongPass(true);
                 } else if (response.data.answer === 'success') {
-                    closeModal();
+                    onClose();
                     console.log(`The user with id = ${response.data.key} successfuly authorizated!`);
                     setCookie('sessionId', response.data.key, { path: '/', sameSite: 'Lax' });
                     setCookie('username', user.login, { path: '/', sameSite: 'Lax' });
@@ -65,8 +65,8 @@ function LogIn() {
 
     return (
         <div>
-            <button onClick={openModal}>Log In</button>
-            <Modal isOpen={isModalOpen} onClose={closeModal} head={'LOG IN'}>
+            {/* <button className="btn-head" onClick={openModal}>Войти</button> */}
+            <Modal isOpen={isOpen} onClose={onClose} head={'Вход'}>
                 <div className='child'>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -117,9 +117,9 @@ function LogIn() {
                             sendData();
                         }}
                     >
-                        Log In
+                        Войти
                     </button>
-                    <p>Are you not registered yet?<br />Go to sign up</p>
+                    <p>Вы еще не зарегистрированы?<br />Перейдите на окно регистрации</p>
                 </div>
             </Modal>
         </div>
