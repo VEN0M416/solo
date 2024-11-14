@@ -43,31 +43,31 @@ button.SugnUp-Button{
     padding: 10px;
     border-radius: 8px;
     border: none;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     font-size:large;
     width: fill;
     text-align: center;
-    background-color: rgb(245,158,11);
+    background-color: rgb(255, 162, 0);
     cursor: pointer;
 }
 
 button.SugnUp-Button:hover{
-    background-color: rgb(255, 132, 11);
+    background-color: rgb(255, 196, 0);
 }
 
 button.SugnUp-Button:active{
-    background-color: rgb(217, 119, 6);
+    background-color: rgb(255, 162, 0);
 }
 
 p{
     margin: 4px 8px 8px 8px;
-    color: aliceblue;
+    color: rgb(253, 253, 253);
     text-align: center;
 }
 
 p.warning{
     text-align: center;
     margin: 0px 8px 0px 8px;
-    color: rgb(255, 58, 58);
+    color: rgb(255, 225, 58);
 }
 

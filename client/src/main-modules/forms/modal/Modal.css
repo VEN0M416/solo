@@ -11,12 +11,13 @@
 }
 
 .modal {
-  /* background: rgb(5, 38, 102); */
-  background: linear-gradient(135deg, rgb(121, 127, 134) 0%, rgb(99,106,114) 30%, rgb(19,29,38) 100%);
+  background: rgb(247, 107, 43);
+  /* background: linear-gradient(135deg, rgb(253, 172, 80) 0%, rgb(255, 200, 49) 30%, rgb(252, 255, 53) 100%); */
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   position: relative;
+  z-index: 10px;
 }
 
 .modal-close {
@@ -27,13 +28,13 @@
   border: none;
   font-size: 30px;
   cursor: pointer;
-  color: rgb(245,158,11);
+  color: rgb(255, 255, 255);
 }
 
 .Head {
   margin: 0px 18px 18px 8px;
   text-align: center;
-  color:aliceblue;
+  color:rgb(255, 255, 255);
 }
 
 h2 {
